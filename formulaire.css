@@ -1,0 +1,191 @@
+/* Corps de la page */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Hauteur de la fenêtre */
+    flex-direction: column;
+    text-align: center;
+    background: url("background_formulaire.jpg") no-repeat center center fixed;
+    background-size: cover;
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition du body */
+}
+
+/* Animation pour l'apparition du body */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Titre principal */
+h1 {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    line-height: 1.2;
+    animation: slideUp 1s ease-in-out; /* Animation du titre pour qu'il glisse de bas en haut */
+}
+
+/* Animation de l'h1 pour qu'il glisse de bas en haut */
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Conteneur du formulaire */
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    animation: fadeInUp 1s ease-in-out; /* Animation pour faire apparaître le formulaire */
+}
+
+/* Animation pour faire apparaître le conteneur du formulaire */
+@keyframes fadeInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Sous-titre dans le formulaire */
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out; /* Animation d'apparition du sous-titre */
+}
+
+/* Groupe de champs dans le formulaire */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    opacity: 0; /* Initialement invisible */
+    animation: fadeInLeft 1s forwards; /* Animation pour faire apparaître chaque champ depuis la gauche */
+    animation-delay: 0.3s; /* Retard de l'animation pour les champs */
+}
+
+/* Animation de chaque champ qui entre depuis la gauche */
+@keyframes fadeInLeft {
+    0% { transform: translateX(-20px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Style des labels */
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Style des champs de texte */
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-in-out; /* Animation pour faire apparaître les champs */
+}
+
+/* Animation de focus sur le champ de texte */
+.form-group input:focus {
+    border-color: #ff6600;
+    background-color: #fff;
+    outline: none;
+    animation: pulse 0.5s ease-in-out; /* Animation de pulsation lors du focus */
+}
+
+/* Animation du champ lorsqu'il est sélectionné */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Bouton d'appel à l'action (soumettre le formulaire) (S'inscrire) */
+.cta {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    animation: bounce 0.5s infinite alternate; /* Animation de rebond du bouton */
+}
+
+/* Animation pour le bouton */
+@keyframes pulse {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Effet au survol du bouton */
+.cta:hover {
+    background-color: #e65c00;
+}
+
+/* Effet au clic du bouton */
+.cta:active {
+    transform: scale(0.98);
+}
+
+/* Bouton de retour */
+.back-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #cccccc;
+    color: #333;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-top: 15px;
+    animation: fadeInUp 1s ease-in-out; /* Animation d'apparition du bouton de retour */
+}
+
+/* Effet au survol du bouton de retour */
+.back-btn:hover {
+    background-color: #b3b3b3;
+}
+
+/* Effet au clic du bouton de retour */
+.back-btn:active {
+    transform: scale(0.98);
+}
+
+/* Message d'erreur */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    animation: fadeIn 0.5s ease-in-out; /* Animation d'apparition du message d'erreur */
+}
