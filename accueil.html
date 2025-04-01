@@ -120,6 +120,45 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      32333654674273213527134134153421546215672157621567215762156421542157215624516247751624561246125421564216415451245162451
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        /* Définir la taille de la carte */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Carte Stamen avec Leaflet</h1>
+
+    <!-- Conteneur pour la carte -->
+    <div id="map"></div>
+
+    <!-- Inclure Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Initialiser la carte -->
+    <script>
+        // Créez la carte et définissez la vue initiale (latitude, longitude, niveau de zoom)
+        var map = L.map('map').setView([48.8566, 2.3522], 13); // Coordonnées pour Paris
+
+        // Ajouter les tuiles de Stamen
+        L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://stamen.com">Stamen Design</a> | ' +
+                '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a>',
+            subdomains: ['a', 'b', 'c', 'd'],
+            minZoom: 5,
+            maxZoom: 18
+        }).addTo(map);
+
+        // Ajouter un marqueur à la carte (optionnel)
+        var marker = L.marker([48.8566, 2.3522]).addTo(map);
+        marker.bindPopup("<b>Paris</b>").openPopup();
+    </script>
     ></script>
   </body>
 </html>
