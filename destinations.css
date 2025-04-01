@@ -1,0 +1,14 @@
+/* Styles généraux de votre page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styles pour la carte */
+#map {
+    height: 600px;  /* Hauteur de la carte */
+    width: 100%;    /* Largeur de la carte */
+    border: 1px solid #ccc; /* Bordure autour de la carte */
+}
