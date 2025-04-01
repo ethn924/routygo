@@ -9,6 +9,6 @@ body {
 /* Styles pour la carte */
 #map {
     height: 600px;  /* Hauteur de la carte */
-    width: 100%;    /* Largeur de la carte */
+    width: 60%;    /* Largeur de la carte */
     border: 1px solid #ccc; /* Bordure autour de la carte */
 }
