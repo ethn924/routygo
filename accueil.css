@@ -332,16 +332,3 @@ footer {
     border-top: 1px solid #ccc;
     padding-top: 10px;
 }
-
-
-
-
-
-
-
-/* Styles pour la carte */
-#map {
-    height: 600px;  /* Hauteur de la carte */
-    width: 100%;    /* Largeur de la carte */
-    border: 1px solid #ccc; /* Bordure autour de la carte */
-}
