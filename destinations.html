@@ -1,126 +1,119 @@
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Routy Go</title>
-    <!-- Lien vers le fichier CSS externe accueil.css -->
-    <link rel="stylesheet" href="accueil.css" />
-      <!-- Inclure le CSS de Leaflet -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoutyGo : Destinations et Carte</title>
+    <link rel="stylesheet" href="destinations.css">
+
+    <!-- Inclure le CSS de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <!-- Inclure Turf.js -->
     <script src="https://unpkg.com/@turf/turf"></script>
     <!-- Inclure Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-      
-  </head>
-  <body>
+</head>
+<body>
+
+    <!-- En-tête RoutyGo -->
     <header>
-      <div class="logo">
-        <img src="logo.jpg" alt="Logo Routy Go" />
-      </div>
-      <h1 class="site-title">RoutyGo</h1>
-      <h1 class="slogan">
-        Avec RoutyGo, votre voyage commence ici : réservez, partez et profitez !
-      </h1>
-      <nav>
-        <ul>
-          <li><a href="#">Destinations</a></li>
-          <li><a href="..\Hotels\hotel.html">Hôtels</a></li>
-          <li><a href="..\Restaurants\restaurant.html">Restaurants</a></li>
-          <li><a href="#">Activités</a></li>
-          <li><a href="..\About-Us\about-us.html">À propos de nous</a></li>
-          <!-- Nouveau lien -->
-        </ul>
-      </nav>
-      <a href="..\Formulaire\formulaire.php">
-        <button class="inscription">Inscription</button>
-      </a>
-        
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo RoutyGo">
+        </div>
+        <h1 class="site-title">RoutyGo</h1>
+        <h1 class="slogan">Avec RoutyGo, votre voyage commence ici : réservez, partez et profitez !</h1>
+        <nav>
+            <ul>
+                <li><a href="..\Destinations\destinations.html">Destinations</a></li>
+                <li><a href="..\Hotels\hotel.html">Hôtels</a></li>
+                <li><a href="..\Restaurants\restaurant.html">Restaurants</a></li>
+                <li><a href="#">Activités</a></li>
+                <li><a href="..\About-Us\about-us.html">À propos de nous</a></li>
+            </ul>
+        </nav>
+        <a href="..\Formulaire\formulaire.php">
+            <button class="inscription">Inscription</button>
+        </a>
     </header>
 
+    <!-- Contenu principal -->
     <main>
-      <section class="hero">
-        <img src="background_section_accueil.jpeg" alt="Coucher de soleil" />
-        <div class="hero-text">
-          <h1>Des destinations de rêves vous attendent !</h1>
-          <p>Explorez des endroits exotiques et inoubliables</p>
-        </div>
-      </section>
-      <h1>CARTE</h1>
-    
-    <!-- Conteneur pour la carte -->
-    <div id="map" style="height: 600px;"></div>
+        <h2>Découvrez nos Destinations</h2>
+        <p>Explorez les meilleures destinations avec RoutyGo et trouvez les meilleurs hôtels, restaurants et activités pour votre voyage.</p>
 
-    <!-- Inclure Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- Inclure Turf.js -->
-    <script src="https://unpkg.com/@turf/turf"></script>
-    <script>
-        // Créer une carte Leaflet
-        var map = L.map('map').setView([48.8566, 2.3522], 13); // Coordonnées pour Paris
+        <!-- Bouton pour explorer la carte -->
+        <button id="exploreButton">Explorez</button>
 
-        // Ajouter les tuiles OpenStreetMap à la carte
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Ajouter deux marqueurs à la carte
-        var marker1 = L.marker([48.8566, 2.3522]).addTo(map); // Paris
-        var marker2 = L.marker([48.8708, 2.2905]).addTo(map); // Paris Gare du Nord
-
-        // Calculez la distance entre les deux marqueurs
-        var point1 = turf.point([marker1.getLatLng().lng, marker1.getLatLng().lat]);
-        var point2 = turf.point([marker2.getLatLng().lng, marker2.getLatLng().lat]);
-
-        var distance = turf.distance(point1, point2, { units: 'kilometers' });
-
-        // Affichez la distance dans une popup
-        marker1.bindPopup("Paris");
-        marker2.bindPopup("Gare du Nord");
-        marker1.openPopup();
-
-        // Afficher la distance dans la console et une popup
-        console.log("La distance entre les deux points est de : " + distance.toFixed(2) + " km");
-        marker1.bindPopup("La distance entre Paris et Gare du Nord est de " + distance.toFixed(2) + " km").openPopup();
-    </script>
+        <!-- Conteneur pour la carte (initialement cachée) -->
+        <h2>Carte Interactive</h2>
+        <p>Visualisez la distance entre différents points d'intérêt grâce à notre carte interactive.</p>
+        <div id="map" style="height: 600px; display: none;"></div>
     </main>
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>À propos</h3>
-          <p>
-            RoutyGo vous aide à découvrir les meilleures destinations et
-            expériences à travers le monde.
-          </p>
-        </div>
-        <div class="footer-section">
-          <h3>Liens rapides</h3>
-          <ul>
-            <li><a href="#">Destinations</a></li>
-            <li><a href="#">Hôtels</a></li>
-            <li><a href="../Restaurants/restaurant.html">Restaurants</a></li>
-            <li><a href="#">Activités</a></li>
-            <li><a href="..\About-Us\about-us.html">À propos de nous</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Nous suivre</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61574765286788"><img src="facebook-icon.png" alt="Facebook" /></a>
-            <a href="https://www.instagram.com/routygo/"><img src="instagram-icon.png" alt="Instagram" /></a>
-            <a href="https://www.linkedin.com/in/routy-go-37603435a/"><img src="linkedin-icon.png" alt="LinkedIn" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 RoutyGo - Tous droits réservés</p>
-      </div>
-    </footer>
-  </body>
-</html>
 
+    <!-- Pied de page RoutyGo -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>RoutyGo vous aide à découvrir les meilleures destinations et expériences à travers le monde.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Hôtels</a></li>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Activités</a></li>
+                    <li><a href="..\About-Us\about-us.html">À propos de nous</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Nous suivre</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RoutyGo - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Script Leaflet + Turf.js pour la carte -->
+    <script>
+        // Fonction pour afficher la carte après avoir cliqué sur le bouton "Explorez"
+        document.getElementById('exploreButton').addEventListener('click', function() {
+            // Afficher la carte
+            document.getElementById('map').style.display = 'block';
+            this.style.display = 'none'; // Cacher le bouton après avoir cliqué
+
+            // Créer une carte Leaflet
+            var map = L.map('map').setView([48.8566, 2.3522], 13); // Coordonnées pour Paris
+
+            // Ajouter les tuiles OpenStreetMap à la carte
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Ajouter deux marqueurs à la carte
+            var marker1 = L.marker([48.8566, 2.3522]).addTo(map); // Paris
+            var marker2 = L.marker([48.8708, 2.2905]).addTo(map); // Paris Gare du Nord
+
+            // Calculez la distance entre les deux marqueurs
+            var point1 = turf.point([marker1.getLatLng().lng, marker1.getLatLng().lat]);
+            var point2 = turf.point([marker2.getLatLng().lng, marker2.getLatLng().lat]);
+
+            var distance = turf.distance(point1, point2, { units: 'kilometers' });
+
+            // Afficher la distance dans une popup
+            marker1.bindPopup("La distance entre Paris et Gare du Nord est de " + distance.toFixed(2) + " km").openPopup();
+
+            console.log("La distance entre les deux points est de : " + distance.toFixed(2) + " km");
+        });
+    </script>
+
+</body>
+</html>
