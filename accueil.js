@@ -22,7 +22,7 @@ window.onscroll = function() {
 
 
 
-/*
+
 // Créez la carte avec Leaflet, centrée sur Paris (48.8566, 2.3522) avec un zoom de 13
 var map = L.map('map').setView([48.8566, 2.3522], 13);
 
@@ -38,4 +38,4 @@ L.tileLayer('https://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
 // Ajouter un marqueur à Paris
 var marker = L.marker([48.8566, 2.3522]).addTo(map);
 marker.bindPopup("<b>Paris</b>").openPopup();
-*/
+
