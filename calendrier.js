@@ -1,30 +1,18 @@
+// JavaScript pour la gestion des dates
 let currentMonth = 3;
 let currentYear = 2025;
-
 let startDate = null;
 let endDate = null;
-let selectionCleared = false;
-let ignoreClick = false;
 
-document.getElementById("calendar-toggle").addEventListener("click", () => {
+document.getElementById("dates").addEventListener("click", () => {
   const container = document.getElementById("calendar-container");
   container.style.display = container.style.display === "none" ? "block" : "none";
+  createCalendar(currentYear, currentMonth);
 });
 
 function updateMonthLabel() {
-  const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+  const monthNames = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
   document.getElementById("monthLabel").textContent = monthNames[currentMonth] + " " + currentYear;
-}
-
-function clearSelection() {
-  startDate = null;
-  endDate = null;
-  selectionCleared = true;
-}
-
-function isBetween(dateObj, start, end) {
-  return dateObj >= start && dateObj <= end;
 }
 
 function createCalendar(year, month) {
@@ -47,35 +35,22 @@ function createCalendar(year, month) {
     cell.className = "day";
     cell.textContent = day;
 
-    if (startDate && endDate && isBetween(dateObj, startDate, endDate)) {
+    if (startDate && endDate && dateObj >= startDate && dateObj <= endDate) {
       cell.classList.add("selected");
     }
 
     cell.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (startDate && endDate && !selectionCleared) {
-        clearSelection();
-        createCalendar(currentYear, currentMonth);
-        return;
-      }
-
       if (!startDate) {
-        clearSelection();
         startDate = dateObj;
-        selectionCleared = false;
-        createCalendar(currentYear, currentMonth);
       } else if (!endDate) {
         endDate = dateObj;
-
         if (endDate < startDate) {
-          const temp = startDate;
-          startDate = endDate;
-          endDate = temp;
+          [startDate, endDate] = [endDate, startDate];
         }
-
-        selectionCleared = false;
-        createCalendar(currentYear, currentMonth);
       }
+
+      document.getElementById("dates").value = `${startDate.toLocaleDateString()} → ${endDate.toLocaleDateString()}`;
+      createCalendar(currentYear, currentMonth);
     });
 
     calendar.appendChild(cell);
@@ -84,66 +59,48 @@ function createCalendar(year, month) {
   updateMonthLabel();
 }
 
-document.addEventListener("click", function (e) {
-  const calendarBox = document.querySelector("#calendar-container");
-  const toggle = document.getElementById("calendar-toggle");
-  if (!calendarBox.contains(e.target) && !toggle.contains(e.target) && !ignoreClick) {
-    clearSelection();
-    createCalendar(currentYear, currentMonth);
-  }
-});
-
 document.getElementById("prevMonth").addEventListener("click", function () {
-  ignoreClick = true;
   currentMonth--;
   if (currentMonth < 0) {
     currentMonth = 11;
     currentYear--;
   }
   createCalendar(currentYear, currentMonth);
-  setTimeout(() => ignoreClick = false, 100);
 });
 
 document.getElementById("nextMonth").addEventListener("click", function () {
-  ignoreClick = true;
   currentMonth++;
   if (currentMonth > 11) {
     currentMonth = 0;
     currentYear++;
   }
   createCalendar(currentYear, currentMonth);
-  setTimeout(() => ignoreClick = false, 100);
 });
 
-createCalendar(currentYear, currentMonth);
+// Gestion des invités
+let adultsCount = 1;
+let kidsCount = 0;
 
-function setupAirportDropdown(fieldId) {
-    const field = document.getElementById(fieldId);
-    const valueDiv = field.querySelector(".value");
-    const dropdown = field.querySelector(".dropdown");
-  
-    field.addEventListener("click", (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle("hidden");
-    });
-  
-    dropdown.querySelectorAll("li").forEach(item => {
-      item.addEventListener("click", (e) => {
-        e.stopPropagation();
-        valueDiv.textContent = item.textContent;
-        dropdown.classList.add("hidden");
-      });
-    });
-  
-    // Ferme le dropdown si on clique ailleurs
-    document.addEventListener("click", () => {
-      dropdown.classList.add("hidden");
-    });
+document.getElementById("increase-adults").addEventListener("click", () => {
+  adultsCount++;
+  document.getElementById("adults").value = adultsCount;
+});
+
+document.getElementById("decrease-adults").addEventListener("click", () => {
+  if (adultsCount > 1) {
+    adultsCount--;
+    document.getElementById("adults").value = adultsCount;
   }
-  
-  setupAirportDropdown("departure-field");
-  setupAirportDropdown("arrival-field");
-  
+});
 
+document.getElementById("increase-kids").addEventListener("click", () => {
+  kidsCount++;
+  document.getElementById("kids").value = kidsCount;
+});
 
-  
+document.getElementById("decrease-kids").addEventListener("click", () => {
+  if (kidsCount > 0) {
+    kidsCount--;
+    document.getElementById("kids").value = kidsCount;
+  }
+});
