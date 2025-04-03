@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -60,6 +60,100 @@
     <input type="text" id="airport-search" placeholder="Tapez une ville ou code IATA...">
     <ul id="results" class="dropdown hidden"></ul>
   </div>
+  <script src="script.js"></script>
+</body>
+</html> */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bandeau RoutyGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="search-banner">
+    <!-- Partie 1: Destination -->
+    <div class="search-section">
+      <label for="destination">Destination</label>
+      <input type="text" id="destination" placeholder="Où aimeriez-vous aller ?">
+    </div>
+
+    <!-- Partie 2: Dates -->
+    <div class="search-section">
+      <label for="dates">Dates</label>
+      <input type="text" id="dates" placeholder="Arrivée → Départ" readonly>
+      <div id="calendar-container" style="display: none;">
+        <div class="calendar-header">
+          <button id="prevMonth">←</button>
+          <span id="monthLabel"></span>
+          <button id="nextMonth">→</button>
+        </div>
+        <div class="calendar-grid">
+          <div class="calendar-days">
+            <div>Lun</div><div>Mar</div><div>Mer</div><div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div>
+          </div>
+          <div id="calendar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partie 3: Invités -->
+    <div class="search-section">
+      <label for="guests">Invités</label>
+      <div class="guests-input">
+        <button id="decrease-adults">-</button>
+        <input type="text" id="adults" value="1" readonly>
+        <button id="increase-adults">+</button>
+        <span>Adultes</span>
+      </div>
+      <div class="guests-input">
+        <button id="decrease-kids">-</button>
+        <input type="text" id="kids" value="0" readonly>
+        <button id="increase-kids">+</button>
+        <span>Enfants</span>
+      </div>
+    </div>
+
+    <!-- Bouton rechercher -->
+    <div class="search-btn">
+      ➤ Rechercher
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
