@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bandeau RoutyGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="search-banner">
+    <div class="trip-type">
+      <label><input type="radio" name="trip" checked> Aller Retour</label>
+      <label><input type="radio" name="trip"> Aller simple</label>
+      <label><input type="radio" name="trip"> Destinations multiples</label>
+    </div>
+
+    <div class="search-fields">
+      <div class="field">
+        <label>AÉROPORT DE DÉPART</label>
+        <div class="value">PARIS (PAR)</div>
+      </div>
+
+      <div class="field">
+        <label>AÉROPORT D'ARRIVÉE</label>
+        <div class="value">Sélectionnez le Pays / Ville</div>
+      </div>
+
+      <div class="field clickable" id="calendar-toggle">
+        <label>CALENDRIER</label>
+        <div class="value">Choisir les dates</div>
+      </div>
+
+      <div class="field">
+        <label>PASSAGERS</label>
+        <div class="value">01</div>
+      </div>
+
+      <div class="search-btn">
+        ➤
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendrier caché par défaut -->
+  <div id="calendar-container" style="display: none;">
+    <div class="calendar-header">
+      <button id="prevMonth">←</button>
+      <span id="monthLabel"></span>
+      <button id="nextMonth">→</button>
+    </div>
+    <div class="calendar-grid">
+      <div class="calendar-days">
+        <div>Lun</div><div>Mar</div><div>Mer</div><div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div>
+      </div>
+      <div id="calendar"></div>
+    </div>
+  </div>
+  <div class="field">
+    <label>RECHERCHE AÉROPORT</label>
+    <input type="text" id="airport-search" placeholder="Tapez une ville ou code IATA...">
+    <ul id="results" class="dropdown hidden"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
