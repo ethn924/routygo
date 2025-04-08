@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Bandeau RoutyGo</title>
-  <link rel="stylesheet" href="calendrier (3).css">
+  <link rel="stylesheet" href="calendrier.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
@@ -35,13 +37,21 @@
 
     <!-- Partie 3: Invités -->
     <div class="search-section guests">
-      <div class="guests-input">
+      <!-- Icône Ajouter -->
+      <div class="add-icon" id="add-icon">
+        <ion-icon name="add-circle"></ion-icon>
+      </div>
+
+      <!-- Section Adultes -->
+      <div class="guests-input hidden" id="adults-section">
         <button id="decrease-adults">-</button>
         <input type="text" id="adults" value="1" readonly>
         <button id="increase-adults">+</button>
         <span>Adultes</span>
       </div>
-      <div class="guests-input">
+
+      <!-- Section Enfants -->
+      <div class="guests-input hidden" id="kids-section">
         <button id="decrease-kids">-</button>
         <input type="text" id="kids" value="0" readonly>
         <button id="increase-kids">+</button>
