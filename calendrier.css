@@ -1,4 +1,4 @@
-body {
+body { 
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
@@ -15,7 +15,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap; /* Modification ici pour permettre une meilleure disposition */
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -40,8 +40,8 @@ body {
 }
 
 .search-section + .search-section {
-    border-left: 1px solid #ccc; /* Petite barre de séparation entre les sections */
-    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    padding-left: 40px;
 }
 
 .guests {
@@ -52,24 +52,53 @@ body {
 
 .guests-input {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 5px;
+}
+
+.guests-input label {
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .guests-input button {
     padding: 5px;
-    background-color: #000; /* Boutons en noir */
-    color: white; /* Texte en blanc */
+    background-color: #000;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .guests-input input {
-    width: 40px;
-    text-align: center;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
     border: 1px solid #ccc;
-    padding: 5px;
+    font-size: 14px;
+}
+
+/* Nouveau champ pour Invités */
+#new-guests {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Nouveau wrapper pour l'input et le bouton d'ajout */
+.guests-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.add-icon {
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Ajouter un peu de style à l'icône */
@@ -77,35 +106,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px; /* Taille de l'icône */
-    color: #000; /* Couleur de l'icône */
+    font-size: 24px;
+    color: #000;
     cursor: pointer;
 }
 
 .search-btn {
     font-size: 20px;
     cursor: pointer;
-    background-color: #000; /* Bouton Rechercher en noir */
-    color: white; /* Texte en blanc */
+    background-color: #000;
+    color: white;
     padding: 10px 15px;
     border-radius: 30px;
     user-select: none;
-    margin-left: 20px; /* Ajouté pour que le bouton soit à droite */
+    margin-left: 20px;
 }
 
 /* Styles du calendrier pour le centrer sur l'écran */
 #calendar-container {
-    position: fixed; /* Positionné par rapport à l'écran */
-    top: 50%; /* Centrer verticalement */
-    left: 50%; /* Centrer horizontalement */
-    transform: translate(-50%, -50%); /* Ajuste pour parfaitement centrer */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 1000px;
     background: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    display: none; /* Initialement caché */
-    z-index: 1000; /* S'assurer que le calendrier soit au-dessus des autres éléments */
+    display: none;
+    z-index: 1000;
 }
 
 .calendar-header {
