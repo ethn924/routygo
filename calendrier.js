@@ -1,4 +1,53 @@
-// JavaScript pour la gestion des dates
+// Gestion du menu déroulant pour l'icône ajouter
+document.getElementById("add-icon").addEventListener("click", function(event) {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+
+    // Afficher ou cacher le menu déroulant
+    dropdownMenu.classList.toggle("show");
+
+    // Empêcher la fermeture immédiate du menu
+    event.stopPropagation();
+});
+
+// Fermer le menu déroulant si l'utilisateur clique ailleurs
+document.addEventListener("click", function(event) {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const addIcon = document.getElementById("add-icon");
+
+    if (!dropdownMenu.contains(event.target) && event.target !== addIcon) {
+        dropdownMenu.classList.remove("show");
+    }
+});
+
+// Gestion des invités (adultes et enfants)
+let adultsCount = 1;
+let kidsCount = 0;
+
+document.getElementById("increase-adults").addEventListener("click", () => {
+    adultsCount++;
+    document.getElementById("adults").value = adultsCount;
+});
+
+document.getElementById("decrease-adults").addEventListener("click", () => {
+    if (adultsCount > 1) {
+        adultsCount--;
+        document.getElementById("adults").value = adultsCount;
+    }
+});
+
+document.getElementById("increase-kids").addEventListener("click", () => {
+    kidsCount++;
+    document.getElementById("kids").value = kidsCount;
+});
+
+document.getElementById("decrease-kids").addEventListener("click", () => {
+    if (kidsCount > 0) {
+        kidsCount--;
+        document.getElementById("kids").value = kidsCount;
+    }
+});
+
+// Gestion du calendrier
 let currentMonth = 3;
 let currentYear = 2025;
 let startDate = null;
@@ -76,41 +125,4 @@ document.getElementById("nextMonth").addEventListener("click", function () {
     currentYear++;
   }
   createCalendar(currentYear, currentMonth);
-});
-
-// Gestion des invités
-let adultsCount = 1;
-let kidsCount = 0;
-
-document.getElementById("increase-adults").addEventListener("click", () => {
-  adultsCount++;
-  document.getElementById("adults").value = adultsCount;
-});
-
-document.getElementById("decrease-adults").addEventListener("click", () => {
-  if (adultsCount > 1) {
-    adultsCount--;
-    document.getElementById("adults").value = adultsCount;
-  }
-});
-
-document.getElementById("increase-kids").addEventListener("click", () => {
-  kidsCount++;
-  document.getElementById("kids").value = kidsCount;
-});
-
-document.getElementById("decrease-kids").addEventListener("click", () => {
-  if (kidsCount > 0) {
-    kidsCount--;
-    document.getElementById("kids").value = kidsCount;
-  }
-});
-
-// Lorsque l'icône "ajouter" est cliquée, on bascule l'affichage des sections
-document.getElementById("add-icon").addEventListener("click", () => {
-  const adultsSection = document.getElementById("adults-section");
-  const kidsSection = document.getElementById("kids-section");
-
-  adultsSection.classList.toggle("hidden");
-  kidsSection.classList.toggle("hidden");
 });
