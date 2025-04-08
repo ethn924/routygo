@@ -15,7 +15,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* Modification ici pour permettre une meilleure disposition */
   justify-content: space-between;
 }
 
@@ -23,6 +23,12 @@ body {
   display: flex;
   flex-direction: column;
   width: 150px;
+}
+
+.search-section label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .search-section input {
@@ -69,6 +75,7 @@ body {
   padding: 10px 15px;
   border-radius: 10px;
   user-select: none;
+  margin-left: 20px; /* Ajouté pour que le bouton soit à droite */
 }
 
 #calendar-container {
