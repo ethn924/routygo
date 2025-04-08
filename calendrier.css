@@ -39,6 +39,11 @@ body {
   width: 100%;
 }
 
+.search-section + .search-section {
+  border-left: 1px solid #ccc; /* Petite barre de séparation entre les sections */
+  padding-left: 20px;
+}
+
 .guests {
   display: flex;
   align-items: center;
@@ -53,8 +58,8 @@ body {
 
 .guests-input button {
   padding: 5px;
-  background-color: #007BFF;
-  color: white;
+  background-color: #000; /* Boutons en noir */
+  color: white; /* Texte en blanc */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -70,8 +75,8 @@ body {
 .search-btn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #007BFF;
-  color: white;
+  background-color: #000; /* Bouton Rechercher en noir */
+  color: white; /* Texte en blanc */
   padding: 10px 15px;
   border-radius: 10px;
   user-select: none;
