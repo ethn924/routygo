@@ -6,6 +6,7 @@ let endDate = null;
 
 document.getElementById("dates").addEventListener("click", () => {
   const container = document.getElementById("calendar-container");
+  // Affiche ou cache le calendrier comme une pop-up
   container.style.display = container.style.display === "none" ? "block" : "none";
   createCalendar(currentYear, currentMonth);
 });
@@ -23,13 +24,13 @@ function createCalendar(year, month) {
   const firstDay = new Date(year, month, 1);
   const firstWeekday = (firstDay.getDay() + 6) % 7;
 
-  for (var i = 0; i < firstWeekday; i++) {
+  for (let i = 0; i < firstWeekday; i++) {
     const emptyCell = document.createElement("div");
     emptyCell.className = "day empty";
     calendar.appendChild(emptyCell);
   }
 
-  for (var day = 1; day <= daysInMonth; day++) {
+  for (let day = 1; day <= daysInMonth; day++) {
     const dateObj = new Date(year, month, day);
     const cell = document.createElement("div");
     cell.className = "day";
@@ -103,4 +104,13 @@ document.getElementById("decrease-kids").addEventListener("click", () => {
     kidsCount--;
     document.getElementById("kids").value = kidsCount;
   }
+});
+
+// Lorsque l'icône "ajouter" est cliquée, on bascule l'affichage des sections
+document.getElementById("add-icon").addEventListener("click", () => {
+  const adultsSection = document.getElementById("adults-section");
+  const kidsSection = document.getElementById("kids-section");
+
+  adultsSection.classList.toggle("hidden");
+  kidsSection.classList.toggle("hidden");
 });
