@@ -1,0 +1,227 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 100px;
+}
+
+header .site-title h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header .slogan p {
+    font-style: italic;
+    margin: 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header .auth-buttons a {
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header .auth-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+main .reservation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+main .reservation button {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main .reservation button:hover {
+    background-color: #45a049;
+}
+
+main h3 {
+    font-size: 2em;
+    margin-top: 40px;
+    text-align: center;
+}
+
+main form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main form label {
+    display: block;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+main form select, main form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+main form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main form button:hover {
+    background-color: #45a049;
+}
+
+main .avis-list h4 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+main .avis-list p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+main .back-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+main .back-button-container button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main .back-button-container button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+footer .footer-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+footer .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .footer-section ul li {
+    margin: 10px 0;
+}
+
+footer .footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer-section .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+footer .footer-section .social-icons a {
+    margin: 0 10px;
+}
+
+footer .footer-section .social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1em;
+}
