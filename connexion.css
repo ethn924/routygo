@@ -1,0 +1,218 @@
+/* Styles généraux */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: backgroundFade 1.5s ease-in-out;
+}
+
+/* Style du bouton de retour à la page d'accueil */
+.back-btn {
+    padding: 10px 20px;
+    background-color: #ff6f61; /* Couleur rouge-orangé (comme sur formulaire.php) */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-btn:hover {
+    background-color: #e68900; /* Une couleur légèrement plus foncée au survol */
+    transform: scale(1.05); /* Agrandissement léger du bouton au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.back-btn:active {
+    transform: scale(0.95); /* Effet de rétrécissement lors du clic */
+}
+
+
+
+/* Animation du fond */
+@keyframes backgroundFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Conteneur principal du formulaire */
+.container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Fond légèrement transparent pour laisser passer un peu l'image */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  overflow: hidden; /* Évite que le contenu dépasse */
+  box-sizing: border-box; /* Prend en compte padding et border dans la largeur et hauteur totales */
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Animation d'apparition du conteneur */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style du titre */
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #ff6f61;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: textZoomIn 1s ease-out;
+  word-wrap: break-word; /* Permet de gérer les longs mots */
+  overflow-wrap: break-word; /* Assure que les longs mots ne débordent pas */
+}
+
+/* Animation du titre */
+@keyframes textZoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Style des champs de saisie */
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%; /* Assure que le champ occupe toute la largeur disponible */
+}
+
+/* Style des labels des champs de saisie */
+.input-group label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  word-wrap: break-word; /* Permet de gérer les longs mots dans les labels */
+  overflow-wrap: break-word; /* Assure que les longs mots ne débordent pas */
+}
+
+/* Style des champs de saisie */
+.input-group input {
+  width: 100%; /* Assure que le champ occupe toute la largeur disponible */
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box; /* Prend en compte padding et border dans la largeur et hauteur totales */
+}
+
+.input-group input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+  transform: scale(1.02);
+}
+
+/* Effet au survol des champs */
+.input-group input:hover {
+  border-color: #ff6f61;
+  transform: scale(1.02);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Style du bouton de connexion */
+.connexion-btn {
+  padding: 14px 24px;
+  background-color: #4caf50; /* Vert agréable */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.connexion-btn:hover {
+  background-color: #45a049; /* Vert plus foncé au survol */
+  transform: scale(1.05); /* Légère augmentation */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.connexion-btn:active {
+  transform: scale(0.95); /* Effet de clic */
+}
+
+/* Style du lien d'inscription */
+.container p {
+  font-size: 14px;
+  color: #333;
+  margin-top: 25px;
+  animation: fadeInText 1s ease-out;
+  word-wrap: break-word; /* Permet de gérer les longs mots */
+  overflow-wrap: break-word; /* Assure que les longs mots ne débordent pas */
+}
+
+/* Animation du texte d'inscription */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container a {
+  color: #ff6f61;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.container a:hover {
+  color: #e68900;
+  text-decoration: underline;
+}
+
+/* Mobile : réduction de la taille de la page pour les petits écrans */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+}
