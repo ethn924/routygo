@@ -1,0 +1,210 @@
+/* Style général du corps de la page */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f0fcff, #ffffff); /* Dégradé bleu ciel vers blanc */
+  }
+  
+  /* Section contact */
+  .contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fafafa;
+    color: #333;
+  }
+  
+  .contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #ff6f61;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Formulaire de contact */
+  .contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+  }
+  
+  .contact-form input[type="submit"] {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-form input[type="submit"]:hover {
+    background-color: #ff9800;
+    transform: scale(1.05);
+  }
+  
+  .contact-form input[type="submit"]:active {
+    transform: scale(0.95);
+  }
+  
+  /* Section information de contact */
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .contact-info div {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info h3 {
+    font-size: 24px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  .contact-info p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .contact-info a {
+    text-decoration: none;
+    color: #ff6f61;
+    font-weight: bold;
+  }
+  
+  .contact-info a:hover {
+    color: #ff9800;
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #e0f7fa;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+  }
+  
+  .footer-section h3 {
+    font-size: 20px;
+    color: #ff6f61;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  .footer-section p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ff9800;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons a img {
+    width: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  #back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 15px;
+    background-color: rgb(255, 166, 0);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #back-to-top:hover {
+    background-color: rgb(255, 0, 0);
+  }
+  
