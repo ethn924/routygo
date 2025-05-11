@@ -105,7 +105,7 @@ session_start();
         <p>
           Pour toute question relative à notre politique de cookies, veuillez
           consulter notre
-          <a href="confidentialite.html">politique de confidentialité</a> ou
+          <a href="confidentialite.php">politique de confidentialité</a> ou
           nous contacter par email à routygocontactpro@gmail.com.
         </p>
       </section>
